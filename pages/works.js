@@ -5,7 +5,7 @@ import { WorkGridItem } from "../components/grid-item";
 
 import thumbSchedule from "../public/images/works/schedulewhiz.png";
 import thumbMicroservices from "../public/images/works/microservices.png";
-import thumbTeamHub from "../public/images/works/teamhub.png";
+import thumbWorkTrack from "../public/images/works/worktrack.png";
 import thumbChihuahua from "../public/images/works/chihuahua.png";
 import thumbCanSat from "../public/images/works/cansat.png";
 import thumbSasWebsite from "../public/images/works/saswebsite.png";
@@ -33,6 +33,17 @@ const Works = () => (
         </Section>
         <Section>
           <WorkGridItem
+            id="worktrack"
+            title="WorkTrack"
+            thumbnail={thumbWorkTrack}
+          >
+            App for workforce, keep your team agenda, with and employee
+            management interface.
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.1}>
+          <WorkGridItem
             id="microservices-api"
             title="Microservices Api"
             thumbnail={thumbMicroservices}
@@ -41,12 +52,6 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.1}>
-          <WorkGridItem id="teamhub" title="TeamHub" thumbnail={thumbTeamHub}>
-            App for workforce, keep your team agenda, with and employee
-            management interface.
-          </WorkGridItem>
-        </Section>
         <Section delay={0.1}>
           <WorkGridItem
             id="chihuahua"
