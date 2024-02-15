@@ -14,7 +14,7 @@ const Setup3D = () => {
   const [loading, setLoading] = useState(true);
   const [renderer, setRenderer] = useState();
   const [_camera, setCamera] = useState();
-  const [target] = useState(new THREE.Vector3(0, 0, 0));
+  const [target] = useState(new THREE.Vector3(0, 0.7, 0));
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       20 * Math.sin(0.2 * Math.PI),
@@ -53,7 +53,7 @@ const Setup3D = () => {
 
       // 640 -> 240
       // 8 -> 6
-      const scale = (scH * 0.005 + 4.8) * 0.075;
+      const scale = (scH * 0.005 + 4.8) * 0.45;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -67,7 +67,7 @@ const Setup3D = () => {
       camera.lookAt(target);
       setCamera(camera);
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1.5);
+      const ambientLight = new THREE.AmbientLight(0xcccccc, 0.3);
       scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);
