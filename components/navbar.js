@@ -16,8 +16,9 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button";
+import GitHubButton from "./github-button";
 
-const LinkItem = ({ href, path, children }) => {
+const LinkItem = ({ href, path, children, ...props }) => {
   const active = path === href;
   const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
   return (
@@ -26,6 +27,7 @@ const LinkItem = ({ href, path, children }) => {
         p={2}
         bg={active ? "glassTelegram" : undefined}
         color={active ? "#202023" : inactiveColor}
+        {...props}
       >
         {children}
       </Link>
@@ -54,7 +56,7 @@ const Navbar = (props) => {
         align="center"
         justify="space-between"
       >
-        <Flex align="center" mr={5}>
+        <Flex align="center" mr={10}>
           <Heading as="h1" size="lg" letterSpacing={"tighter"}>
             <Logo />
           </Heading>
@@ -75,6 +77,14 @@ const Navbar = (props) => {
 
         <Box flex={1} align="right">
           <ThemeToggleButton />
+          <Box
+            flex={1}
+            align="right"
+            display={{ base: "none", md: "inline-block" }}
+          >
+            <GitHubButton />
+          </Box>
+
           <Box ml={2} display={{ base: "inline-block", md: "none" }}>
             <Menu>
               <MenuButton
@@ -89,6 +99,9 @@ const Navbar = (props) => {
                 </NextLink>
                 <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
+                </NextLink>
+                <NextLink href="https://github.com/uma-dev" passHref>
+                  <MenuItem as={Link}>GitHub</MenuItem>
                 </NextLink>
               </MenuList>
             </Menu>
