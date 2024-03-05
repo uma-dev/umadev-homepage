@@ -28,7 +28,7 @@ const Page = () => {
           mb={6}
           align="center"
         >
-          Hi there, here me, I'am a developer based in Mexico!
+          Here me, I'am a developer based in Mexico!
         </Box>
 
         <Box display={{ md: "flex" }}>
