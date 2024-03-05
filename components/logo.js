@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Text, useColorModeValue } from "@chakra-ui/react";
-import BulbIcon from "./icons/bulb";
+import HomeIcon from "./icons/home";
 import styled from "@emotion/styled";
 
 const LogoBox = styled.span`
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   display: inline-flex;
   align-items: center;
   height: 10px;
@@ -17,7 +17,7 @@ const LogoBox = styled.span`
   }
 
   &:hover > svg {
-    transform: rotate(-20deg);
+    transform: rotate(-30deg);
   }
 `;
 
@@ -25,12 +25,12 @@ const Logo = () => {
   return (
     <Link href="/" scroll={false}>
       <LogoBox>
-        <BulbIcon />
+        <HomeIcon />
         <Text
           color={useColorModeValue("gray.800", "whiteAlpha.900")}
           fontFamily="M PLUS Rounded 1c, sans-serif"
           fontWeight="bold"
-          ml={3}
+          ml={1}
         >
           Omar Roldán
         </Text>
