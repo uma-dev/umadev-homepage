@@ -26,6 +26,7 @@ const Works = () => (
             id="schedule-whiz"
             title="Schedule Whiz"
             thumbnail={thumbSchedule}
+            href="https://github.com/uma-dev/schedule-whiz"
           >
             Optimization app to Crafting the perfect Team Schedule in the world
             of remote work.
@@ -36,6 +37,7 @@ const Works = () => (
             id="worktrack"
             title="WorkTrack"
             thumbnail={thumbWorkTrack}
+            href="https://github.com/uma-dev/team-hub"
           >
             App for workforce, keep your team agenda, with and employee
             management interface.
@@ -47,6 +49,7 @@ const Works = () => (
             id="microservices-api"
             title="Microservices Api"
             thumbnail={thumbMicroservices}
+            href="https://github.com/uma-dev/micro-services"
           >
             REST API with spring boot with spring cloud.
           </WorkGridItem>
@@ -57,6 +60,7 @@ const Works = () => (
             id="chihuahua"
             thumbnail={thumbChihuahua}
             title="Chihuahua"
+            href="https://github.com/uma-dev/chihuahua-game"
           >
             Chihuahua dogs 2D video game with Python and Pygame.
           </WorkGridItem>
@@ -72,7 +76,12 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section delay={0.3}>
-          <WorkGridItem id="cansat" thumbnail={thumbCanSat} title="CanSat">
+          <WorkGridItem
+            id="cansat"
+            thumbnail={thumbCanSat}
+            title="CanSat"
+            href="https://github.com/uma-dev/CanSat"
+          >
             Ground Station System, CanSat On board Telemetry with GY-80, Arduino
             and Xbee
           </WorkGridItem>
@@ -82,6 +91,7 @@ const Works = () => (
             id="sas-website"
             thumbnail={thumbSasWebsite}
             title="SAS Website"
+            href="https://github.com/uma-dev/saas-website"
           >
             Landing page styled with bare CSS and AI generated images.
           </WorkGridItem>
@@ -101,12 +111,18 @@ const Works = () => (
             id="dodge-it"
             thumbnail={thumbDodgeIt}
             title="Dodge It!"
+            href="https://github.com/uma-dev/car-game"
           >
             Dodge the fixed and mobile boxes with this funny 2D game.
           </WorkGridItem>
         </Section>
         <Section delay={0.5}>
-          <WorkGridItem id="mini-pac" thumbnail={thumbMiniPac} title="Mini PAC">
+          <WorkGridItem
+            id="mini-pac"
+            thumbnail={thumbMiniPac}
+            title="Mini PAC"
+            href="https://github.com/uma-dev/mini-PAC"
+          >
             Simple AC phase control with zero crossing circuit using ATtiny13u.
           </WorkGridItem>
         </Section>
@@ -115,6 +131,7 @@ const Works = () => (
             id="minipulses-generator"
             thumbnail={thumbMiniPulsesGenerator}
             title="2 Minipulses Generator"
+            href="https://github.com/uma-dev/2-minipulses-generator"
           >
             Easy to use signal generator in Nucleo board with STM32F446RE chip,
             produces two width and delay variable pulses. Windows
