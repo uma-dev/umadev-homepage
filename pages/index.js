@@ -57,7 +57,7 @@ const Page = () => {
             >
               <Image
                 // This path is located inside public/ folder
-                src="/images/omar-profile.jpg"
+                src="/images/omar-profile.jpeg"
                 alt="Profile Image"
                 width="100"
               />
