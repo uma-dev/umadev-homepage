@@ -12,10 +12,13 @@ Inspired by @craftzdog [version](https://github.com/craftzdog/craftzdog-homepage
 
 Important: the 3d model needs to be as lighter as you can in order to get great render speeds, so voxel its a great option for light 3d files.
 
-### 3D Model
+## Customization
 
-- MagicaVoxel: Build your own [voxel](https://en.wikipedia.org/wiki/Voxel) and save it as `.obj`
-- Blender: Import your `.obj` model and then export to `.glb`
+1. **Profile picture**: Use 200x200 jpeg image (for photos) or PNG for screenshots and others.
+2. **Thumbnails**: Use 600px width in your thumbnails and compress images using some tool like [GIMP](https://www.gimp.org/)
+3. **Your 3D Model**
+   - MagicaVoxel: Build your own [voxel](https://en.wikipedia.org/wiki/Voxel) and save it as `.obj`
+   - Blender: Import your `.obj` model and then export to `.glb`. No plugins needed.
 
 ### Stack
 
@@ -51,3 +54,7 @@ Create the production version:
 npm run build
 You can preview the production build with npm run preview.
 ```
+
+## Deploying
+
+Connect your GitHub repo to [Vercel](https://vercel.com/) and you are done.
