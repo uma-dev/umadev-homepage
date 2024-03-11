@@ -14,10 +14,18 @@ import Section from "../components/section";
 import Paragraph from "../components/paragraph";
 import Layout from "../components/layouts/article";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { IoLogoTwitter, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
+import {
+  IoLogoTwitter,
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoMail,
+} from "react-icons/io5";
 import { BioSection, BioYear } from "../components/bio";
+import { useClipboard } from "@chakra-ui/react";
 
 const Page = () => {
+  const { onCopy, hasCopied } = useClipboard("omar.roldan.50@gmail.com");
+
   return (
     <Layout>
       <Container>
@@ -36,7 +44,7 @@ const Page = () => {
             <Heading as="h2" variant="page-title">
               Omar Roldán
             </Heading>
-            <p>Developer / Telecomm Engineer / Tech lover</p>
+            <p>Software Developer / Telecomm Engineer </p>
           </Box>
 
           <Box
@@ -82,8 +90,12 @@ const Page = () => {
           </Paragraph>
           <Box align="center" my={4}>
             <NextLink href="/works">
-              <Button rightIcon={<ChevronRightIcon />} colorScheme="telegram">
-                My portafolio
+              <Button
+                rightIcon={<ChevronRightIcon />}
+                colorScheme="telegram"
+                size="sm"
+              >
+                See portfolio
               </Button>
             </NextLink>
           </Box>
@@ -99,8 +111,7 @@ const Page = () => {
           </BioSection>
           <BioSection>
             <BioYear>2020</BioYear>
-            Completed the Telecommunications Program in the School of
-            Engineering at UNAM (CU).
+            Telecommunications Engineering degree at UNAM.
           </BioSection>
           <BioSection>
             <BioYear>2020</BioYear>
@@ -108,11 +119,11 @@ const Page = () => {
           </BioSection>
           <BioSection>
             <BioYear>2021</BioYear>
-            Worked at IFT (techical and fixed networks).
+            Worked at IFT (Data Analysis: fixed networks).
           </BioSection>
           <BioSection>
             <BioYear>2022</BioYear>
-            Worked at IFT (mobile networks such as 5G, selfdriven cars, etc. ).
+            Worked at IFT (Data Analysis: 5G, WiFi 6E, selfdriven cars).
           </BioSection>
 
           <BioSection>
@@ -151,7 +162,7 @@ const Page = () => {
             </ListItem>
             <ListItem>
               <Link
-                href="https://www.linkedin.com/in/omar-roldan-guerra/"
+                href="https://www.linkedin.com/in/omar-roldan-g/"
                 target="_blank"
               >
                 <Button
@@ -159,11 +170,41 @@ const Page = () => {
                   colorScheme="telegram"
                   leftIcon={<IoLogoLinkedin />}
                 >
-                  /omar-roldan-guerra
+                  in/omar-roldan-g/
                 </Button>
               </Link>
             </ListItem>
           </List>
+        </Section>
+
+        <Section delay={0.4}>
+          <Heading as="h3" variant="section-title">
+            Lets work together!
+          </Heading>
+          <Paragraph>
+            If you're interested in discussing projects or seeking further
+            information, feel free to drop me a message.
+          </Paragraph>
+          <Box align="center" my={6}>
+            <Button
+              variant="ghost"
+              colorScheme="telegram"
+              leftIcon={<IoMail />}
+              mr={2}
+            >
+              omar.roldan.50@gmail.com
+            </Button>
+
+            <Button
+              colorScheme="telegram"
+              size="xs"
+              onClick={() => {
+                onCopy();
+              }}
+            >
+              {hasCopied ? "COPIED" : "COPY"}
+            </Button>
+          </Box>
         </Section>
       </Container>
     </Layout>
