@@ -3,6 +3,7 @@ import Navbar from "../navbar";
 import NoSsr from "../no-ssr";
 import { Box, Container } from "@chakra-ui/react";
 import Setup3D from "../setup-3d";
+import Footer from "../footer";
 
 const Main = ({ children, router }) => {
   return (
@@ -19,6 +20,8 @@ const Main = ({ children, router }) => {
           <Setup3D />
         </NoSsr>
         {children}
+
+        <Footer />
       </Container>
     </Box>
   );
