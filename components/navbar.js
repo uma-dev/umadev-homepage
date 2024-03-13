@@ -25,7 +25,11 @@ const LinkItem = ({ href, path, children, ...props }) => {
     <NextLink href={href}>
       <Link
         p={2}
-        bg={active ? "glassTelegram" : undefined}
+        bg={
+          active
+            ? useColorModeValue("glassTelegramDay", "glassTelegramNight")
+            : undefined
+        }
         color={active ? "#202023" : inactiveColor}
         {...props}
       >
