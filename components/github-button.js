@@ -4,7 +4,7 @@ import NextLink from "next/link";
 
 const GitHubButton = () => {
   return (
-    <NextLink href="https://github.com/uma-dev">
+    <NextLink href="https://github.com/uma-dev" target="_blank">
       <IconButton
         aria-label="Github button"
         colorScheme={useColorModeValue("white", "black")}

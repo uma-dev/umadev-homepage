@@ -21,6 +21,7 @@ import GitHubButton from "./github-button";
 const LinkItem = ({ href, path, children, ...props }) => {
   const active = path === href;
   const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
+  const activeColor = useColorModeValue("white", "#202023");
   return (
     <NextLink href={href}>
       <Link
@@ -30,7 +31,7 @@ const LinkItem = ({ href, path, children, ...props }) => {
             ? useColorModeValue("glassTelegramDay", "glassTelegramNight")
             : undefined
         }
-        color={active ? "#202023" : inactiveColor}
+        color={active ? activeColor : inactiveColor}
         {...props}
       >
         {children}
@@ -74,6 +75,9 @@ const Navbar = (props) => {
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
+          <LinkItem href="/" path={path}>
+            About me
+          </LinkItem>
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
@@ -99,12 +103,16 @@ const Navbar = (props) => {
               />
               <MenuList>
                 <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
+                  <MenuItem as={Link}>About me</MenuItem>
                 </NextLink>
                 <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
                 </NextLink>
-                <NextLink href="https://github.com/uma-dev" passHref>
+                <NextLink
+                  href="https://github.com/uma-dev"
+                  passHref
+                  target="_blank"
+                >
                   <MenuItem as={Link}>GitHub</MenuItem>
                 </NextLink>
               </MenuList>
