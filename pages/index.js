@@ -22,6 +22,8 @@ import {
 } from "react-icons/io5";
 import { BioSection, BioYear } from "../components/bio";
 import { useClipboard } from "@chakra-ui/react";
+import { IoCopy, IoCopyOutline } from "react-icons/io5";
+import { Tooltip } from "@chakra-ui/react";
 
 const Page = () => {
   const { onCopy, hasCopied } = useClipboard("omar.roldan.50@gmail.com");
@@ -185,25 +187,34 @@ const Page = () => {
             If you're interested in discussing projects or seeking further
             information, feel free to drop me a message.
           </Paragraph>
-          <Box align="center" my={6}>
+          <Box align="center" mt={4}>
             <Button
               variant="ghost"
               colorScheme="telegram"
               leftIcon={<IoMail />}
-              mr={2}
+              mr={1}
             >
               omar.roldan.50@gmail.com
             </Button>
 
-            <Button
-              colorScheme="telegram"
-              size="xs"
-              onClick={() => {
-                onCopy();
-              }}
+            <Tooltip
+              hasArrow
+              label={hasCopied ? "COPIED" : "COPY"}
+              placement="auto"
+              closeDelay={800}
+              bg="gray.300"
+              color="black"
             >
-              {hasCopied ? "COPIED" : "COPY"}
-            </Button>
+              <Button
+                colorScheme="telegram"
+                size="sm"
+                onClick={() => {
+                  onCopy();
+                }}
+              >
+                {hasCopied ? <IoCopyOutline /> : <IoCopy />}
+              </Button>
+            </Tooltip>
           </Box>
         </Section>
       </Container>
