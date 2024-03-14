@@ -61,7 +61,7 @@ const Navbar = (props) => {
         align="center"
         justify="space-between"
       >
-        <Flex align="center" mr={10}>
+        <Flex align="center">
           <Heading as="h1" size="lg" letterSpacing={"tighter"}>
             <Logo />
           </Heading>
@@ -72,6 +72,7 @@ const Navbar = (props) => {
           display={{ base: "none", md: "flex" }}
           width={{ base: "full", md: "auto" }}
           alignItems="center"
+          justifyContent="right"
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
@@ -81,15 +82,15 @@ const Navbar = (props) => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
+          <LinkItem href="/works" path={path}>
+            Contact
+          </LinkItem>
         </Stack>
 
-        <Box flex={1} align="right">
+        {/* Make flex in this box to adjust to navbar resize */}
+        <Box flex={{ base: 1, md: 0.4 }} align="right">
           <ThemeToggleButton />
-          <Box
-            flex={1}
-            align="right"
-            display={{ base: "none", md: "inline-block" }}
-          >
+          <Box flex={1} display={{ base: "none", md: "inline-block" }}>
             <GitHubButton />
           </Box>
 
