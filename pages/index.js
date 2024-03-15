@@ -7,27 +7,14 @@ import {
   Heading,
   Image,
   useColorModeValue,
-  List,
-  ListItem,
 } from "@chakra-ui/react";
 import Section from "../components/section";
 import Paragraph from "../components/paragraph";
 import Layout from "../components/layouts/article";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import {
-  IoLogoTwitter,
-  IoLogoGithub,
-  IoLogoLinkedin,
-  IoMail,
-} from "react-icons/io5";
 import { BioSection, BioYear } from "../components/bio";
-import { useClipboard } from "@chakra-ui/react";
-import { IoCopy, IoCopyOutline } from "react-icons/io5";
-import { Tooltip } from "@chakra-ui/react";
 
 const Page = () => {
-  const { onCopy, hasCopied } = useClipboard("omar.roldan.50@gmail.com");
-
   return (
     <Layout>
       <Container>
@@ -43,7 +30,7 @@ const Page = () => {
 
         <Box display={{ md: "flex" }}>
           <Box flexGrow={1}>
-            <Heading as="h2" variant="page-title">
+            <Heading as="h2" variant="page-title" size="lg">
               Omar Roldán
             </Heading>
             <p>Software Developer / Telecomm Engineer </p>
@@ -56,8 +43,11 @@ const Page = () => {
             textAlign="center"
           >
             <Box
-              borderColor="whiteAlpha.800"
-              borderWidth={2}
+              borderColor={useColorModeValue(
+                "blackAlpha.200",
+                "whiteAlpha.800",
+              )}
+              borderWidth={4}
               borderStyle="solid"
               width="100px"
               height="100px"
@@ -125,97 +115,15 @@ const Page = () => {
           </BioSection>
           <BioSection>
             <BioYear>2022</BioYear>
-            Worked at IFT (Data Analysis: 5G, WiFi 6E, selfdriven cars).
+            Worked at IFT (Data Analysis: 5G, WiFi 6E, selfdriven cars). Worked
+            at IFT (Data Analysis: 5G, WiFi 6E, selfdriven cars).
           </BioSection>
 
           <BioSection>
-            <BioYear>2023 - present</BioYear>
+            <BioYear>2023</BioYear>
             Completed different courses related to Java, Spring, Micro services,
             RDB, Frontend, DT, etc.
           </BioSection>
-        </Section>
-
-        <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
-            On the web
-          </Heading>
-          <List>
-            <ListItem>
-              <Link href="https://github.com/uma-dev" target="_blank">
-                <Button
-                  variant="ghost"
-                  colorScheme="telegram"
-                  leftIcon={<IoLogoGithub />}
-                >
-                  @uma-dev
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link href="https://twitter.com/uma_dev_" target="_blank">
-                <Button
-                  variant="ghost"
-                  colorScheme="telegram"
-                  leftIcon={<IoLogoTwitter />}
-                >
-                  @uma_dev_
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="https://www.linkedin.com/in/omar-roldan-g/"
-                target="_blank"
-              >
-                <Button
-                  variant="ghost"
-                  colorScheme="telegram"
-                  leftIcon={<IoLogoLinkedin />}
-                >
-                  in/omar-roldan-g/
-                </Button>
-              </Link>
-            </ListItem>
-          </List>
-        </Section>
-
-        <Section delay={0.4}>
-          <Heading as="h3" variant="section-title">
-            Lets work together!
-          </Heading>
-          <Paragraph>
-            If you're interested in discussing projects or seeking further
-            information, feel free to drop me a message.
-          </Paragraph>
-          <Box align="center" mt={4}>
-            <Button
-              variant="ghost"
-              colorScheme="telegram"
-              leftIcon={<IoMail />}
-              mr={1}
-            >
-              omar.roldan.50@gmail.com
-            </Button>
-
-            <Tooltip
-              hasArrow
-              label={hasCopied ? "COPIED" : "COPY"}
-              placement="auto"
-              closeDelay={800}
-              bg="gray.300"
-              color="black"
-            >
-              <Button
-                colorScheme="telegram"
-                size="sm"
-                onClick={() => {
-                  onCopy();
-                }}
-              >
-                {hasCopied ? <IoCopyOutline /> : <IoCopy />}
-              </Button>
-            </Tooltip>
-          </Box>
         </Section>
       </Container>
     </Layout>
