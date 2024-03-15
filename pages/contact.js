@@ -1,11 +1,14 @@
 import {
-  Box,
   Button,
   Container,
   Heading,
+  HStack,
   List,
   ListItem,
   Link,
+  Tag,
+  TagLabel,
+  TagLeftIcon,
   Tooltip,
 } from "@chakra-ui/react";
 import {
@@ -27,10 +30,6 @@ const Contact = () => {
   return (
     <Layout title="Works">
       <Container minHeight="45vh">
-        {/* <Heading as="h3" fontSize={22} mb={4} visibility={false}> */}
-        {/*   Contact */}
-        {/* </Heading> */}
-
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
             Contact
@@ -39,15 +38,12 @@ const Contact = () => {
             If you're interested in discussing projects or seeking further
             information, feel free to drop me a message. Lets work together!
           </Paragraph>
-          <Box align="center" mt={4}>
-            <Button
-              variant="ghost"
-              colorScheme="telegram"
-              leftIcon={<IoMail />}
-              mr={1}
-            >
-              omar.roldan.50@gmail.com
-            </Button>
+
+          <HStack justifyContent="center" mt={4}>
+            <Tag size="lg" variant="subtle" colorScheme="gray">
+              <TagLeftIcon boxSize="12px" as={IoMail} />
+              <TagLabel>omar.roldan.50@gmail.com</TagLabel>
+            </Tag>
 
             <Tooltip
               hasArrow
@@ -67,7 +63,7 @@ const Contact = () => {
                 {hasCopied ? <IoCopyOutline /> : <IoCopy />}
               </Button>
             </Tooltip>
-          </Box>
+          </HStack>
         </Section>
 
         <Section delay={0.1}>
