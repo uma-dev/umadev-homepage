@@ -1,11 +1,17 @@
 import NextLink from "next/link";
 import {
-  Link,
-  Container,
   Box,
   Button,
+  Container,
+  Flex,
   Heading,
   Image,
+  Link,
+  VStack,
+  HStack,
+  Tag,
+  TagLabel,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import Section from "../components/section";
@@ -25,7 +31,7 @@ const Page = () => {
           mb={6}
           align="center"
         >
-          Here me, I'am a developer based in Mexico!
+          Here me, I'm a developer based in Mexico!
         </Box>
 
         <Box display={{ md: "flex" }}>
@@ -33,7 +39,7 @@ const Page = () => {
             <Heading as="h2" variant="page-title" size="lg">
               Omar Roldán
             </Heading>
-            <p>Software Developer / Telecomm Engineer </p>
+            <p>Software Developer | Telecom Engineer </p>
           </Box>
 
           <Box
@@ -66,21 +72,19 @@ const Page = () => {
         </Box>
 
         <Section delay={0.1}>
-          <Heading as="h3" variant="section-title">
-            Work
-          </Heading>
+          <Heading as="h3" variant="section-title"></Heading>
           <Paragraph>
-            Accountable developer with knowledge in Spring Boot, Spring REST,
-            Spring Security, GCP, SQL, HTML/CSS and data analytics. I'm seeking
-            about collaborating on intricate software challenges to create
-            enterprise-level applications, acquire new skills and thrive through
-            collaboration with other developers. Reach me at{" "}
-            <NextLink href="https://www.linkedin.com/in/omar-roldan-guerra/">
-              <Link>LinkedIn</Link>
-            </NextLink>
-            .
+            <Flex justifyContent="left" gap="2" direction="column">
+              <Text>
+                <Text as="b">Responsible</Text> and always seeking to learn new
+                things. As an engineer, I love applying my skills to make things
+                simpler, solve issues, propose new solutions, and create a
+                community with other developers while doing what I love.{" "}
+              </Text>
+              <Text as="i">"The path to clarity is through simplicity"</Text>
+            </Flex>
           </Paragraph>
-          <Box align="center" my={4}>
+          <Box align="center" my={5}>
             <NextLink href="/works">
               <Button
                 rightIcon={<ChevronRightIcon />}
@@ -95,35 +99,88 @@ const Page = () => {
 
         <Section delay={0.2}>
           <Heading as="h3" variant="section-title">
+            Stack
+          </Heading>
+          <Box pl={2} pb={2}>
+            <VStack align="start" spacing={4}>
+              <Box>
+                <Text fontWeight="bold">Frontend</Text>
+                <HStack>
+                  <Tag size="md" colorScheme="gray">
+                    <TagLabel>React</TagLabel>
+                  </Tag>
+                  <Tag size="md" colorScheme="gray">
+                    <TagLabel>Chakra UI</TagLabel>
+                  </Tag>
+                </HStack>
+              </Box>
+              <Box>
+                <Text fontWeight="bold">Backend</Text>
+                <HStack>
+                  <Tag size="md" colorScheme="gray">
+                    <TagLabel>Spring (Java)</TagLabel>
+                  </Tag>
+                  <Tag size="md" colorScheme="gray">
+                    <TagLabel>Python </TagLabel>
+                  </Tag>
+                </HStack>
+              </Box>
+              <Box>
+                <Text fontWeight="bold">Data</Text>
+                <HStack>
+                  <Tag size="md" colorScheme="gray">
+                    <TagLabel>Postgre</TagLabel>
+                  </Tag>
+                  <Tag size="md" colorScheme="gray">
+                    <TagLabel>MySQL</TagLabel>
+                  </Tag>
+                </HStack>
+              </Box>
+            </VStack>
+          </Box>
+          <Text p={4}>Among others ...</Text>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
             Bio
           </Heading>
           <BioSection>
-            <BioYear>1997</BioYear>
-            Born in Mexico.
+            <BioYear>2020</BioYear>
+            Engineering degree at UNAM.
           </BioSection>
           <BioSection>
             <BioYear>2020</BioYear>
-            Telecommunications Engineering degree at UNAM.
-          </BioSection>
-          <BioSection>
-            <BioYear>2020</BioYear>
-            Worked at IINGEN UNAM (Scholarship holder)
+            IINGEN UNAM: Scholarship holder
           </BioSection>
           <BioSection>
             <BioYear>2021</BioYear>
-            Worked at IFT (Data Analysis: fixed networks).
+            IFT: Data Analysis of fixed networks.
           </BioSection>
           <BioSection>
             <BioYear>2022</BioYear>
-            Worked at IFT (Data Analysis: 5G, WiFi 6E, selfdriven cars). Worked
-            at IFT (Data Analysis: 5G, WiFi 6E, selfdriven cars).
+            IFT: Data Analysis of 5G and WiFi 6E.
           </BioSection>
-
           <BioSection>
             <BioYear>2023</BioYear>
-            Completed different courses related to Java, Spring, Micro services,
-            RDB, Frontend, DT, etc.
+            Completed different tech{" "}
+            <NextLink
+              href="https://www.linkedin.com/in/omar-roldan-g/"
+              target="_blank"
+            >
+              <Link>courses</Link>
+            </NextLink>
           </BioSection>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            I ♥
+          </Heading>
+          <Paragraph>
+            3D printing, laser cutting, Muay Thai and BJJ to keep me active and
+            fit.
+          </Paragraph>
         </Section>
       </Container>
     </Layout>
