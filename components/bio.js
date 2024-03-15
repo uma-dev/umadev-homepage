@@ -7,6 +7,6 @@ export const BioSection = styled(Box)`
 `;
 
 export const BioYear = styled.span`
-  font-weight: bold;
+  color: #a0aec0;
   margin-right: 1em;
 `;

@@ -16,7 +16,7 @@ import thumbMiniPulsesGenerator from "../public/images/works/minipulses.png";
 const Works = () => (
   <Layout title="Works">
     <Container>
-      <Heading as="h3" fontSize={20} mb={4}>
+      <Heading as="h3" fontSize={22} mb={4}>
         Works
       </Heading>
 

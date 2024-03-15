@@ -20,22 +20,28 @@ import GitHubButton from "./github-button";
 
 const LinkItem = ({ href, path, children, ...props }) => {
   const active = path === href;
-  const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
-  const activeColor = useColorModeValue("white", "#202023");
+  const inactiveColor = useColorModeValue("blackAlpha.700", "whiteAlpha.800");
+  const activeColor = useColorModeValue("blackAlpha.900", "white");
   return (
     <NextLink href={href}>
       <Link
         p={2}
-        bg={
-          active
-            ? useColorModeValue("glassTelegramDay", "glassTelegramNight")
-            : undefined
-        }
+        fontSize="sm"
         color={active ? activeColor : inactiveColor}
         {...props}
       >
         {children}
       </Link>
+      <Box
+        bg={
+          active
+            ? useColorModeValue("glassTelegramDay", "glassTelegramNight")
+            : undefined
+        }
+        height={0.5}
+        position="relative"
+        top="-3px"
+      ></Box>
     </NextLink>
   );
 };
@@ -82,7 +88,7 @@ const Navbar = (props) => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
-          <LinkItem href="/works" path={path}>
+          <LinkItem href="/contact" path={path}>
             Contact
           </LinkItem>
         </Stack>
@@ -102,19 +108,16 @@ const Navbar = (props) => {
                 variant="outline"
                 arial-label="Options"
               />
-              <MenuList>
+              {/* render until open */}
+              <MenuList isLazy>
                 <NextLink href="/" passHref>
                   <MenuItem as={Link}>About me</MenuItem>
                 </NextLink>
                 <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
                 </NextLink>
-                <NextLink
-                  href="https://github.com/uma-dev"
-                  passHref
-                  target="_blank"
-                >
-                  <MenuItem as={Link}>GitHub</MenuItem>
+                <NextLink href="/contact" passHref>
+                  <MenuItem as={Link}>Contact</MenuItem>
                 </NextLink>
               </MenuList>
             </Menu>
