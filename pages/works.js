@@ -1,7 +1,16 @@
-import { Container, Heading, SimpleGrid, Divider } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  SimpleGrid,
+  Divider,
+} from "@chakra-ui/react";
 import Layout from "../components/layouts/article";
 import Section from "../components/section";
 import { WorkGridItem } from "../components/grid-item";
+import NextLink from "next/link";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 
 import thumbSchedule from "../public/images/works/schedulewhiz.png";
 import thumbMicroservices from "../public/images/works/microservices.png";
@@ -16,8 +25,8 @@ import thumbMiniPulsesGenerator from "../public/images/works/minipulses.png";
 const Works = () => (
   <Layout title="Works">
     <Container>
-      <Heading as="h3" fontSize={22} mb={4}>
-        Works
+      <Heading as="h3" variant="section-title" mb={4}>
+        Main projects
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
@@ -69,7 +78,7 @@ const Works = () => (
 
       <Section delay={0.2}>
         <Divider my={6} />
-        <Heading as="h3" fontSize={20} mb={4}>
+        <Heading as="h3" variant="section-title" mb={4}>
           Collaborations
         </Heading>
       </Section>
@@ -100,7 +109,7 @@ const Works = () => (
 
       <Section delay={0.4}>
         <Divider my={6} />
-        <Heading as="h3" fontSize={20} mb={4}>
+        <Heading as="h3" variant="section-title" mb={4}>
           Old works
         </Heading>
       </Section>
@@ -138,6 +147,20 @@ const Works = () => (
           </WorkGridItem>
         </Section>
       </SimpleGrid>
+
+      <Section delay={0.5}>
+        <Box align="center" my={4}>
+          <NextLink href="/contact">
+            <Button
+              rightIcon={<ChevronRightIcon />}
+              colorScheme="telegram"
+              size="sm"
+            >
+              Contact info
+            </Button>
+          </NextLink>
+        </Box>
+      </Section>
     </Container>
   </Layout>
 );

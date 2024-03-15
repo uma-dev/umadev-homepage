@@ -7,17 +7,24 @@ import {
   Divider,
   Button,
 } from "@chakra-ui/react";
+import { ChevronLeftIcon } from "@chakra-ui/icons";
 
 const NotFound = () => {
   return (
     <Container>
-      <Heading as="h1">Not Found</Heading>
-      <Text> The page was not found!</Text>
+      <Heading as="h1">404</Heading>
+      <Text> Ups... the page your are looking for was not found!</Text>
       <Divider my={6} />
 
-      <Box my={6} align="center">
+      <Box mt={8} minHeight="20vh" align="center">
         <NextLink href="/">
-          <Button colorScheme="telegram">Return to Home</Button>
+          <Button
+            colorScheme="telegram"
+            size="sm"
+            leftIcon={<ChevronLeftIcon />}
+          >
+            Homepage
+          </Button>
         </NextLink>
       </Box>
     </Container>
