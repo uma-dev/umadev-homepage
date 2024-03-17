@@ -14,7 +14,7 @@ const Setup3D = () => {
   const [loading, setLoading] = useState(true);
   const [renderer, setRenderer] = useState();
   const [_camera, setCamera] = useState();
-  const [target] = useState(new THREE.Vector3(0, 0.7, 0));
+  const [target] = useState(new THREE.Vector3(0, 1, 0));
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       20 * Math.sin(0.2 * Math.PI),
@@ -67,7 +67,7 @@ const Setup3D = () => {
       camera.lookAt(target);
       setCamera(camera);
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 0.3);
+      const ambientLight = new THREE.AmbientLight(0xcccccc, Math.PI);
       scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -92,7 +92,7 @@ const Setup3D = () => {
 
         if (frame <= 100) {
           const p = initialCameraPosition;
-          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
+          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 15;
 
           camera.position.y = 10;
           camera.position.x =
