@@ -19,6 +19,7 @@ import Paragraph from "../components/paragraph";
 import Layout from "../components/layouts/article";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { BioSection, BioYear } from "../components/bio";
+import { IoEye } from "react-icons/io5";
 
 const Page = () => {
   return (
@@ -138,10 +139,29 @@ const Page = () => {
               </Box>
             </VStack>
           </Box>
-          <Text p={4}>Among others ...</Text>
+          <Text fontSize="sm" p={4}>
+            Among others ...
+          </Text>
         </Section>
 
         <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            CV
+          </Heading>
+          <Paragraph>See the pdf</Paragraph>
+          <Box align="center" my={5}>
+            <NextLink
+              href="https://drive.google.com/file/d/1gEqrb1NjiJbk4F2HNROxxbPgw9GHh4LU/view?usp=sharing"
+              target="_blank"
+            >
+              <Button rightIcon={<IoEye />} colorScheme="telegram" size="sm">
+                CV
+              </Button>
+            </NextLink>
+          </Box>
+        </Section>
+
+        <Section delay={0.4}>
           <Heading as="h3" variant="section-title">
             Bio
           </Heading>
