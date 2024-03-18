@@ -3,7 +3,8 @@
 Build and cutomize your online portfolio.
 
 <p align="center">
-  <img src='https://github.com/uma-dev/umadev-homepage/assets/22565959/5940b303-d52c-4b54-875f-0e0431aa5e78' width='400'>
+  <img src='https://github.com/uma-dev/umadev-homepage/assets/22565959/300a2b9c-1b91-4f0e-984f-bf365a75a912' width='600'>
+
 </p>
 
 Inspired by @craftzdog [version](https://github.com/craftzdog/craftzdog-homepage)
