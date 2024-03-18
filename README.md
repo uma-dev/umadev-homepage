@@ -2,8 +2,11 @@
 
 Build and cutomize your online portfolio.
 
-<p align="center">
+<p align="left">
   <img src='https://github.com/uma-dev/umadev-homepage/assets/22565959/300a2b9c-1b91-4f0e-984f-bf365a75a912' width='600'>
+</p>
+<p align="right">
+  <img src='https://github.com/uma-dev/umadev-homepage/assets/22565959/207a8fab-fd0a-47e5-b2cf-6848f1f5228d' width='292'>
 
 </p>
 
