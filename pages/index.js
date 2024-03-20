@@ -139,7 +139,7 @@ const Page = () => {
               </Box>
             </VStack>
           </Box>
-          <Text fontSize="sm" p={4}>
+          <Text fontSize="sm" p={3}>
             Among others ...
           </Text>
         </Section>
