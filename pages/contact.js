@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <Layout title="Contact">
       <Container minHeight="45vh">
-        <Section delay={0.1}>
+        <Section>
           <Heading as="h3" variant="section-title">
             Let's team up!
           </Heading>
@@ -31,7 +31,7 @@ const Contact = () => {
           <Email />
         </Section>
 
-        <Section delay={0.1}>
+        <Section>
           <Heading as="h3" variant="section-title" mt={9}>
             On the web
           </Heading>
