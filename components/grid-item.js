@@ -1,8 +1,12 @@
 import Image from "next/image";
+import NextLink from "next/link";
 import {
+  Badge,
   Box,
   Button,
   Flex,
+  HStack,
+  VStack,
   Link,
   LinkBox,
   LinkOverlay,
@@ -16,6 +20,7 @@ import {
 import { Global } from "@emotion/react";
 import { useRef } from "react";
 import { IoLogoGithub } from "react-icons/io5";
+import { useState } from "react";
 
 export const GridItem = ({ children, href, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
@@ -35,8 +40,17 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
   </Box>
 );
 
-export const WorkGridItem = ({ children, title, href, thumbnail }) => {
+export const WorkGridItem = ({
+  children,
+  title,
+  href,
+  thumbnail,
+  website,
+  features,
+  stack,
+}) => {
   const initialFocusRef = useRef();
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Box w="100%">
       <LinkBox as="a" href="#" scroll={false} cursor="pointer">
@@ -59,27 +73,41 @@ export const WorkGridItem = ({ children, title, href, thumbnail }) => {
       <Accordion allowToggle>
         <AccordionItem border="none">
           <h2>
-            <AccordionButton>
-              <Box
-                as="span"
-                flex="1"
-                textAlign="center"
-                fontSize="sm"
-                color="grey"
-              >
-                see more
+            <AccordionButton
+              textColor="gray"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+              _expanded={{ textColor: "gray.400" }}
+            >
+              <Box as="span" flex="1" textAlign="center" fontSize="sm">
+                {isOpen ? "see less" : "see more"}
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
+
           <AccordionPanel pb={4} p={1}>
-            <Flex direction="column" gap={5}>
-              <Text fontSize={14}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </Text>
+            <Flex direction="column" gap={3}>
+              <VStack gap={2} fontSize="sm" align="start">
+                <Text as="b">Features</Text>
+                <Text>{features}</Text>
+              </VStack>
+              <HStack gap={2} fontSize="sm">
+                <Badge fontSize="0.8em" size="sm">
+                  Stack
+                </Badge>
+                <Text>{stack}</Text>
+              </HStack>
+              <HStack gap={2} fontSize="sm">
+                <Badge fontSize="0.8em" size="sm">
+                  Website
+                </Badge>
+                <NextLink href={website} target="_blank">
+                  <Link>{title} page</Link>
+                </NextLink>
+              </HStack>
+
               <Link href={href} target="_blank" alignSelf="flex-end">
                 <Button
                   colorScheme="telegram"
@@ -87,7 +115,7 @@ export const WorkGridItem = ({ children, title, href, thumbnail }) => {
                   size="sm"
                   ref={initialFocusRef}
                 >
-                  Code
+                  Source
                 </Button>
               </Link>
             </Flex>
