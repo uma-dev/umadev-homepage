@@ -154,7 +154,7 @@ const Page = () => {
           <Paragraph>See the pdf</Paragraph>
           <Box align="center" my={5}>
             <NextLink
-              href="https://drive.google.com/file/d/1gEqrb1NjiJbk4F2HNROxxbPgw9GHh4LU/view?usp=sharing"
+              href="https://drive.google.com/file/d/1-cZMMcWWWyR3-ejDn7W-ViKOLXqjKr3I/view?usp=sharing"
               target="_blank"
             >
               <Button rightIcon={<IoEye />} colorScheme="telegram" size="sm">
